@@ -77,13 +77,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <li><a href="#html-file-structure">HTML file structure</a></li>
         <li><a href="#headers">Headers</a></li>
         <li><a href="#lists">Lists</a></li>
+        <li><a href="#images">Images</a></li>
         <li><a href="#hyperlinks">Hyperlinks</a></li>
+        <li><a href="#tables">Tables</a></li>
         </ul></li>
         </ul>
         </div>
       </div>
             <div class="span9">
-            <h2 id="html-files">HTML Files</h2>
+            <p>Last Update: 21 September 2015</p>
+<h2 id="html-files">HTML Files</h2>
 <h3 id="about">About</h3>
 <p>HTML files are basically text files with the extension of <code>.html</code> and can be easily created on any operating system. To edit html files, it is encouraged to use a text editor specifically made for editing text files of this sort. There are many editors out there, pick one that you like and stick with it. There is no one recommended editor but it is good to know how to use at least one properly.</p>
 <p>Some examples of text editors are as follows:</p>
@@ -174,12 +177,62 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="kw">&lt;dt&gt;</span>HTTP
     <span class="kw">&lt;dd&gt;</span>HyperText Transfer Protocol
 <span class="kw">&lt;/dl&gt;</span></code></pre></div>
+<h3 id="images">Images</h3>
+<p>Images are a significant part of the web today. The <code>&lt;img/&gt;</code> tag is used to link image files to your HTML file and it comes with several attributes. We will discuss the <code>alt</code> attribute here and other attributes can be checked over at the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes">Mozilla Developer Network</a>. Basic syntax for linking images is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;(your image link with extension)&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Your alternative text&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+<p>The <code>alt</code> attribute is used to display the text you choose when a browser is unable to load the image on your webiste due to an incorrect link, corrupt image file, incorrect extension or if the end-user uses a text web browser.</p>
+<p><strong>Note:</strong> The <code>&lt;img&gt;</code> element does not require a closing tag<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. It does however still need a <code>/</code> before its closing brace, hence <code>&lt;img src=&quot;&quot;/&gt;</code>.</p>
 <h3 id="hyperlinks">Hyperlinks</h3>
-<p>To do.</p>
+<p>Hyperlinks enable us to link text or images to places such as other websites or other webpages on our web server. The syntax for using them for text is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;(your link here)&quot;</span><span class="kw">&gt;</span>Your Link Text<span class="kw">&lt;/a&gt;</span></code></pre></div>
+<p>If you wish to add links to images, then use the following syntax:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;(your link here)&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;(your image link here)&quot;</span><span class="kw">/&gt;&lt;/a&gt;</span></code></pre></div>
+<h4 id="links-within-documents">Links within documents</h4>
+<p>The lecture slides show how to do this using the <code>name</code> attribute of the <code>&lt;a&gt;</code> tag but this has become obsolete since HTML5<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. This has also been explained in a StackOverflow <a href="https://stackoverflow.com/questions/484719/html-anchors-with-name-or-id">question</a>. The recommended way to do this now is to utitlize the <code>id</code> attribute with <code>&lt;a&gt;</code> or header tags or any other text related tags. An example is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">Go to <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#Section_1&quot;</span><span class="kw">&gt;</span>Section 1<span class="kw">&lt;/a&gt;</span>.
+
+<span class="kw">&lt;h2</span><span class="ot"> id=</span><span class="st">&quot;Section_1&quot;</span><span class="kw">&gt;</span>Section 1<span class="kw">&lt;/h2&gt;</span></code></pre></div>
+<h3 id="tables">Tables</h3>
+<p>Tables in HTML are aking to their counterparts in print and are used to display tabular data. The simplest syntax for a table is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Khalid<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Hussain<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Sajid<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Hussain<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></code></pre></div>
+<p>A more structured table can be achieved as follows<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
+  <span class="kw">&lt;thead&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Header content 1<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Header content 2<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/thead&gt;</span>
+  <span class="kw">&lt;tfoot&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Footer content 1<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Footer content 2<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tfoot&gt;</span>
+  <span class="kw">&lt;tbody&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Body content 1<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Body content 2<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tbody&gt;</span>
+<span class="kw">&lt;/table&gt;</span></code></pre></div>
+<p>More information about tables can be obtained from the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">Mozilla Developer Network</a>.</p>
 <div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>https://css-tricks.com/snippets/html/html5-page-structure/<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Summary<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#More_Examples<a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
             </div>
