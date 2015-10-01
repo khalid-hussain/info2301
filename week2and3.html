@@ -109,6 +109,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 $4site = <span class="st">'not yet'</span><span class="ot">;</span>     <span class="co">// invalid; starts with a number</span>
 <span class="kw">$_4site</span> = <span class="st">'not yet'</span><span class="ot">;</span>    <span class="co">// valid; starts with an underscore</span>
 <span class="kw">?&gt;</span></code></pre></div>
+<h3 id="constants">Constants</h3>
+<p>A constant is a value that, once set, cannot be changed or unset during the execution of your script <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. This is especially useful for values that you don't want accidentally changed during the execution of your PHP script or page. It is demonstrated as follows:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="co">// Valid constant names</span>
+<span class="fu">define</span><span class="ot">(</span><span class="st">&quot;days_in_week&quot;</span><span class="ot">,</span>  <span class="dv">7</span><span class="ot">);</span>
+<span class="fu">define</span><span class="ot">(</span><span class="st">&quot;PI&quot;</span><span class="ot">,</span>    <span class="fl">3.142</span><span class="ot">);</span>
+
+<span class="fu">echo</span> days_in_week<span class="ot">;</span>
+<span class="kw">?&gt;</span></code></pre></div>
 <h3 id="data-types">Data Types</h3>
 <p>PHP supports four core data types: - <a href="http://php.net/manual/en/language.types.integer.php">Integers</a> - <a href="http://php.net/manual/en/language.types.float.php">Floats</a> - <a href="http://php.net/manual/en/language.types.string.php">Strings</a> - <a href="http://php.net/manual/en/language.types.boolean.php">Boolean</a></p>
 <h3 id="strings">Strings</h3>
@@ -131,8 +140,15 @@ $4site = <span class="st">'not yet'</span><span class="ot">;</span>     <span cl
 <span class="co">// Output: Khalid said 'Hello World'.</span>
 <span class="fu">echo</span> <span class="st">'Khalid said </span><span class="kw">\'</span><span class="st">Hello World</span><span class="kw">\'</span><span class="st">.'</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 <span class="kw">?&gt;</span></code></pre></div>
+<p>Strings can be concatenated (joined) using a dot <code>.</code>. The following is an example:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+    <span class="kw">$name</span> = <span class="st">&quot;Khalid&quot;</span><span class="ot">;</span>
+    <span class="kw">$place</span> = <span class="st">&quot;IIUM&quot;</span><span class="ot">;</span>
+
+    <span class="fu">echo</span> <span class="st">&quot;My name is &quot;</span> . <span class="kw">$name</span> . <span class="st">&quot; and am from &quot;</span> . <span class="kw">$place</span><span class="ot">;</span>
+<span class="kw">?&gt;</span></code></pre></div>
 <h2 id="forms">Forms</h2>
-<p>One of the ways data can be transferred from end-users to PHP is through HTML forms. This section will help demonstrate their usage. The following is a sample HTML form<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</p>
+<p>One of the ways data can be transferred from end-users to PHP is through HTML forms. This section will help demonstrate their usage. The following is a sample HTML form<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;action.php&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span>
     <span class="kw">&lt;p&gt;</span>Your name: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;name&quot;</span> <span class="kw">/&gt;&lt;/p&gt;</span>
     <span class="kw">&lt;p&gt;</span>Your age: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;age&quot;</span> <span class="kw">/&gt;&lt;/p&gt;</span>
@@ -145,7 +161,8 @@ You are &lt;<span class="ot">?</span>php <span class="fu">echo</span> <span clas
 <hr />
 <ol>
 <li id="fn1"><p>http://php.net/manual/en/language.variables.basics.php<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>http://php.net/manual/en/tutorial.forms.php<a href="#fnref2">↩</a></p></li>
+<li id="fn2"><p>Taken fron lecturer slides.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>http://php.net/manual/en/tutorial.forms.php<a href="#fnref3">↩</a></p></li>
 </ol>
 </div>
             </div>
