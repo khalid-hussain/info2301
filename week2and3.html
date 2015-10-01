@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Khalid Hussain" />
-  <meta name="date" content="2015-09-17" />
-  <title>INFO 2301 Tutorial - Week 1 - HTML Basics</title>
+  <meta name="date" content="2015-09-22" />
+  <title>INFO 2301 Tutorial - Week 2 - PHP Basics</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -51,10 +51,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <div class="navbar navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
-        <span class="doc-title">INFO 2301 Tutorial - Week 1 - HTML Basics</span>
+        <span class="doc-title">INFO 2301 Tutorial - Week 2 - PHP Basics</span>
         <ul class="nav pull-right doc-info">
                     <li><p class="navbar-text">Khalid Hussain</p></li>
-                              <li><p class="navbar-text">17 September 2015</p></li>
+                              <li><p class="navbar-text">22 September 2015</p></li>
                   </ul>
       </div>
     </div>
@@ -67,160 +67,85 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <li class="nav-header">Table of Contents</li>
         </ul>
         <ul>
-        <li><a href="#html-files">HTML Files</a></li>
-        <li><a href="#tags-and-elements">Tags and Elements</a></li>
+        <li><a href="#php-files">PHP Files</a></li>
+        <li><a href="#tags">Tags</a></li>
+        <li><a href="#commands">Commands</a></li>
+        <li><a href="#forms">Forms</a></li>
         </ul>
         </div>
       </div>
             <div class="span9">
-            <p>Last Update: 21 September 2015</p>
-<h2 id="html-files">HTML Files</h2>
-<h3 id="about">About</h3>
-<p>HTML files are basically text files with the extension of <code>.html</code> and can be easily created on any operating system. To edit html files, it is encouraged to use a text editor specifically made for editing text files of this sort. There are many editors out there, pick one that you like and stick with it. There is no one recommended editor but it is good to know how to use at least one properly.</p>
-<p>Some examples of text editors are as follows:</p>
-<ul>
-<li><p><a href="https://notepad-plus-plus.org/">Notepad++</a></p></li>
-<li><p><a href="http://www.contexteditor.org/index.php">ConTEXT</a></p></li>
-<li><p><a href="https://www.gnu.org/software/emacs/">Emacs</a></p></li>
-<li><p><a href="http://www.sublimetext.com/3">Sublime Text 3</a></p></li>
-</ul>
-<p>For a more comprehensive list of text editors and their comparison, please refer to the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Comparison_of_text_editors">Comparison of text editors</a>.</p>
-<h3 id="how-to-create">How to create</h3>
-<p>Since they are simple text files, there are several ways to create them depending on the operating system. For Microsoft Windows, here are a couple:</p>
-<ul>
-<li><p>Creating a new text file from the right-click context menu of Explorer and then changing the extension from <code>.txt</code> to <code>.html</code>. In order to be able to see the extension, disable the option <code>Hide extensions for known   file types</code> in the <code>View</code> tab which can be accessed from <code>Tools &gt; Folder   Options</code> in Windows Explorer. Use the <code>Alt</code> button to access the menu in Windows Explorer.</p></li>
-<li><p>Opening a text editor and saving a file from there with the <code>.html</code> extension.</p></li>
-</ul>
-<h3 id="encoding">Encoding</h3>
+            <h2 id="php-files">PHP Files</h2>
+<p>PHP files are also text files which may have consist of HTML Markup. PHP code is to be included within its tags, namely, the opening <code>&lt;?php</code> and closing <code>?&gt;</code>. At times, the closing tag may be omitted but for the sake of saving time debugging later on, ensure that you close your PHP code blocks.</p>
+<h2 id="tags">Tags</h2>
 <p>To do.</p>
-<h2 id="tags-and-elements">Tags and Elements</h2>
-<h3 id="markup">Markup</h3>
-<p>HTML markup consists of tags and elements. Take the following as an example:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;p&gt;</span>This is a paragraph<span class="kw">&lt;/p&gt;</span></code></pre></div>
-<p>Here, <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> are tags and <code>This is a paragraph</code> is the element of those those tags. Specifically, <code>&lt;p&gt;</code> is known as the opening tag and <code>&lt;/p&gt;</code> the closing tag.</p>
-<p><strong>Note:</strong> Not all HTML markup requires closing tags. For example, the <code>&lt;img&gt;</code> tag.</p>
-<h3 id="html-file-structure">HTML file structure</h3>
-<p>A basic HTML file structure is as follows<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>HTML<span class="dt">&gt;</span>
-<span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=UTF-8&quot;</span> <span class="kw">/&gt;</span>
-        <span class="kw">&lt;title&gt;</span>Your Website<span class="kw">&lt;/title&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>
+<h2 id="commands">Commands</h2>
+<h3 id="echo">Echo</h3>
+<p>The <code>echo</code> command is used to output to the screen or in this case, the webpage. It accepts variables and immediate strings. This is demonstrated as follows:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="fu">echo</span> <span class="st">&quot;This is a string&quot;</span><span class="ot">;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">$number</span> = <span class="dv">1</span><span class="ot">;</span>   <span class="co">// Declaration of a variable</span>
+<span class="fu">echo</span> <span class="kw">$number</span><span class="ot">;</span>  <span class="co">// Echoing a variable</span></code></pre></div>
+<h3 id="comments">Comments</h3>
+<p>There are two types of comments: - Block - Inline</p>
+<p>The previous section demonstrated the use of inline comments with the use of <code>//</code>. These are used to comment single lines in the code as opposed to block comments which can be used to comment out blocks of code as follows:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">$this_number</span> = <span class="dv">9</span><span class="ot">;</span>
+<span class="co">/*</span>
+<span class="co">This is a block comment</span>
+<span class="co">This is the second line</span>
+<span class="co">And here is the third line</span>
+<span class="co">None of these will be executed</span>
+<span class="co">They are for your eyes only :)</span>
+<span class="co">*/</span>
+<span class="fu">echo</span> <span class="kw">$this_number</span><span class="ot">;</span></code></pre></div>
+<h3 id="variables-var">Variables <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h3>
+<p>Variables in PHP are represented by a dollar sign followed by the name of the variable. The variable name is case-sensitive.</p>
+<p>Variable names follow the same rules as other labels in PHP. A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.</p>
+<p><strong>Note:</strong> Variables in PHP are loosely/weakly typed and thus don't need a data type defined. This is contrary to other languages such as C and C++. This also means that you need to be more careful when assigning variables. For more information about this, please visit <a href="https://wshell.wordpress.com/2009/10/08/quicky-1-php-is-loosely-typed-what-does-that-meand/">this</a> website.</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="kw">$var</span> = <span class="st">'Khalid'</span><span class="ot">;</span>
+<span class="kw">$Var</span> = <span class="st">'Hussain'</span><span class="ot">;</span>
+<span class="fu">echo</span> <span class="st">&quot;</span><span class="kw">$var</span><span class="st">, </span><span class="kw">$Var</span><span class="st">&quot;</span><span class="ot">;</span>      <span class="co">// outputs &quot;Khalid, Hussain&quot;</span>
 
-    <span class="kw">&lt;body&gt;</span>
-    <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></div>
-<p>The structure is made up of two main parts:</p>
-<ul>
-<li><p><code>&lt;head&gt;</code> contains setup information for the browser &amp; the web page. e.g: the title for the browser window, style definitions, JavaScript code, etc...</p></li>
-<li><p><code>&lt;body&gt;</code> contains the actual content to be displayed on the web page.</p></li>
-</ul>
-<h3 id="headers">Headers</h3>
-<p>HTML allows for headers up to 6 levels. Headers are used to organize your content similar to how the chapters of a book or sections of a thesis organize content. The top level header is <code>&lt;h1&gt;</code> and the lowest level header is <code>&lt;h6&gt;</code>. The following is an example of usage:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>HTML<span class="dt">&gt;</span>
-<span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=UTF-8&quot;</span> <span class="kw">/&gt;</span>
-        <span class="kw">&lt;title&gt;</span>Your Website<span class="kw">&lt;/title&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>
+$4site = <span class="st">'not yet'</span><span class="ot">;</span>     <span class="co">// invalid; starts with a number</span>
+<span class="kw">$_4site</span> = <span class="st">'not yet'</span><span class="ot">;</span>    <span class="co">// valid; starts with an underscore</span>
+<span class="kw">?&gt;</span></code></pre></div>
+<h3 id="data-types">Data Types</h3>
+<p>PHP supports four core data types: - <a href="http://php.net/manual/en/language.types.integer.php">Integers</a> - <a href="http://php.net/manual/en/language.types.float.php">Floats</a> - <a href="http://php.net/manual/en/language.types.string.php">Strings</a> - <a href="http://php.net/manual/en/language.types.boolean.php">Boolean</a></p>
+<h3 id="strings">Strings</h3>
+<p>Strings can be declared within either double quotes <code>&quot;</code> or single quotes <code>'</code>. There are subtle differences that you need to be careful with. Doubles quotes will execute variables whereas single quotes will treat every letter and word as a character and string of characters respectively. If you wish to type double quotes within double quotes or single quotes within single quotes, you will have to <em>escape</em> them. This is demonstrated as follows:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="kw">$myString</span> = <span class="st">&quot;Khalid Hussain&quot;</span><span class="ot">;</span>
 
-    <span class="kw">&lt;body&gt;</span>
-        <span class="kw">&lt;h1&gt;</span>INFO 2301 - Web Programming<span class="kw">&lt;/h1&gt;</span>
-        <span class="kw">&lt;p&gt;</span>This class is about teaching HTML and PHP.<span class="kw">&lt;/p&gt;</span>
+<span class="co">// Output: My name is Khalid Hussain</span>
+<span class="fu">echo</span> <span class="st">&quot;My name is </span><span class="kw">$myString</span><span class="st">&quot;</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 
-        <span class="kw">&lt;h2&gt;</span>Week 1<span class="kw">&lt;/h2&gt;</span>
+<span class="co">// Output: My name is $myString</span>
+<span class="fu">echo</span> <span class="st">'My name is $myString'</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 
-        <span class="kw">&lt;h3&gt;</span>Introduction to HTML and PHP<span class="kw">&lt;/h3&gt;</span>
-        <span class="kw">&lt;h3&gt;</span>Basic HTML Markup<span class="kw">&lt;/h3&gt;</span>
-    <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span></code></pre></div>
-<p>Which will give you the following:</p>
-<div class="figure">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcsAAADhCAIAAAAoIAn0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AACapSURBVHhe7Z0rk+O8tobzLwwDGzYMDAwMDDQMDEzVgZsYGhocYGhosqtSdUigoWujQMNAQ8M5ultLlmwn3eqZb8/7oI6uS8vSa92S3vwCAAAQBygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALGAwgIAQCygsAAAEAsoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAswgrbZJt5jtXzWR3VB0JyqjpVio23xKz5FShlAVa9Ktelf9zK6/m4/0hUUk7ysd+nl7Jun4NK9gb9o87PB1kuKzDN6kevorw8myo/H3dbYcFmuzuei3vIasnzXugKtrs0q5r55JpB1HTYMm9GZq5byNoXOg4x0U37kv2efhPuFIss9nf+RHgfysvb/FMHv5Hudjmw8bY9XG4+Dfp5luawfZMfVP/S7K43olJ9W132tphxdlnjVbKhb8sTT5wcsnvXW2mG5+26k5k1zngb+q6t85MSTt9gGh6V8C9ne8zZSFAVDF1TaiOTj1PevD5EhjY/uK1kJHt/S/u2OCpLHHZn/7MfHmXKcvDXEy9w6EohIKHkEvY2YZJsKoqvsAzeNFWf5vN6Jx71PMzNsRTtmsAeGu8RvFupkBfo79dPVT7nCworMN1zRLqU9b17kY5NSvZ/yggGFl1pqdWh/BOe0PIuwbM+KYsl3k483M4q2hCYyDL43GPva33nTEoCetGJETmxo6u4QEn8siQzCrgwvqKyVtYJyal2TBma7HSpWqXvbOZ7pa+gtJ7UrSv4zFsV8mu4X0Rq3+uKz9Mv+mUz8iMKy2hzqp++x+mmCXd49tyTy90rv8s0V1U+56sKyyEFUpc+67Pl8XAPB78JuhD5qdEwy4p9WGf55O/E3jVWaCLLEnsHlLvsC3qIaU9C7SAK+Hn118uE6WYNkZB5U5b2MZKr3Zz+dp2UzC1WiTluy0a7bMeM1X7SAof79XC+5nl+taZVnB/rU0577BeDYU0aTl+nX5hukJ73LQpLuzJ1aZvbU+bkfMN+wZ/EP3IOu1phj0WVuStD/2ueJfZKwWqF5YPXsmNoScWzniVDZDr79MLysFXhOCdtq7PT0CTzi8cIaZtrodUxSJst13umvYKu3KsUnB9TWFdrnJeMwknjl1jW+FDj1kC6Z3SFZR1PhUsgsX8Y/7h9WIbT48IKyyI8i2nPTJElfkdhu7I0Ac8qM3Y4y9GFUfb6LKTJpnut7vxsUdrGapN93tLSbJUkBdmuDxhKfbZoxjdC5gsMn0yukGGW5O0dAg7pntEV1o39jgrBfzPfrLBMeprliSxL7JWCeYVloubLxVbMROu8O7wW7ixkxVpi8AkAEY+lStWpFT9+m14mIDvdpInE9X4d+n0Ky1f3qlqJp2e4zp42gr0efbPf9RAfRVdYt0FfejmAv4BvV1jG4kSWJfZKwazC8sM0T67lMezizKveHZW2saEdRmZe19ZFas65ko9T0bpTPeJg0kQS41fx36iwyy8rvsN6mJ3pMoGdsbnvboW57cZvr3luxxEfiWf5vOepvKq35n7cBFKg61LaecY5uZPJ9Cpz+257yJ11kGycvlO43e3F5bxQ52Wpy4tqlh9dozOIdAv6R52l3JXJR1rT5ySOTdO9LlzcQ/TcE5y0UZY88HaMNwztKQRvvXp87FFcqgdp3dRS2YS+raSl3JQDy2WeuWiDNJMbSa4ETa0bH13A8vFqpFMPYbXn/cRQWOb0+YksS0z7rWJGYWWJnlyuXvpLtpk82PfmIVYxoWnwtAsJtrSHk1RHMt2nrl/hs8XGfy/u+sF504gd1s5JY0ssy78LvZx6dTtOdxz13k5OJR2nxEfHazZeKDGwWbJ/8Hhx+rvtUjp3oNMGfbtOwR5k32TkConlHRNlrj7q623JfmqsVZC608ZC3AFmjT/nChtrgX3PhmO2nNQVQW3GYLXQdw+xv9ED27tbMEc+se7mHlYw3Kc9PAr7BXysHo7PBMLR3tuSdJPPeQTk0TmWX6ub54rppC++6nkPcRSWMTeRZYlXqIX20MBesZl0rieXY93iet2je7MOCmIu9cxeNBq6psqmF2N32bgVS+6oUVto47x2/laFnbzgyEar3gBoMtITxvdRWGDHV7T19tJ1UYdTHzGBuslrt/RG7oq9II3To5RL+Y1qSzK2x4W1yP502rOXQc+9oIJMUeMgdV43ejATabOPGUZBGdcPntNk2imOzBQuD9ZFGtWVnrUapNaL3W7FdG1GS04SPjXnJvH3oQpkJKf0tD1kd6HaVPbc4wTitCRJdudaPD96Me6QprvduRIup+8PauLMaHCHvapozro3PD8lmsKSjqRRJrHEXilwnTDBk8uxLmCezaSW5SwetGyEb4bZTC/gj0+MtIDaQhvntXOmT/0I7nnXqH7s8ave78iwVjvWVf3Cx3qOzmDP6ceuvSseKmziPqs8MsP23nXw4vYoDf9WIP9OV1HdO6oSCiejbpvZrlZiYI1bOh2w9uPH23lMFlUYw26e/eDdQ0ani5u2mwche5/9XEznmumODFrywTqzpZfZ7ZcEyeOKNqkuOVsNIfeSiZiRPEQUZ0YDjRqnOEHr3vL8lIgKywhMZFniVQorE1nfx1qlsHan9eHWEmjRLHo6QGcbs7gvnKtuC9EfagttnNdO2pqfV9jJeZfqc0zejkY/HImV/Th4Ddbu2qRBozuskUB8RF1E94nXbgY5PWq9S2lGSz35MNBrbiL7zhO1C9DCEWweefBO25wuPsaKTmh2qezHYu4bzviTEe5u78QwwtW9EzNTVSgqmOUtz0+Jq7BTXWEkp9PR9bOENpZ6SGzYeHLR+6AMb8k2bi3LOVzU/dtViwQLa2rGMO4i9lAnUtev8NnLTfkGqI6puRuTT/v17sx0uUA6KSzsVpMGWRHjRWbiI6cPOnHrnhZ1+gsupRkD+cjMzElDClBv4GDz5sY57RTegSkY2kJ8L5Cv6MWj6Nv6QjdGnazh7vZODCPYvrdiZqoKRQWzvOX5KbEVluER2YmfJbSxTiL+8vflcnb5lpvsTKjoMmMFsj2vyqvAbqC1TWANOupE4vrvvkvgPFeL0JMMQKZlDKafk28ROBKbXMvyGHC82wu8jM4IDgTGW85x/LLepY4l3u4xa5GvKc5adWyeXZK7FqC1mNXSHM97ke63p/Jxm/HnnP3vxDDCj++dmJmqQlHBLG95fsoPKCxjulvg+FlCG+smYnMlby5HMZeOupwp1/r9OQnLnmwSewPqFcYZt7XOtZttBTOI6/2vjmAHWcR5rhYzT9KPuwtwOEwuuTqbCUmyDTmetGjxfTkz3Jyi1rbK8ct6l85Zopl9XP4C7PMWyx3jzGK6VfVSp+gf6peb5K7OfCvCJb8TwwhX907MTFWhqJksb3h+ys8orJ74jTh+ltDGThLZ3+mycbLN2mH7hxO8LORH7Kj55JW98NaUZEwl0/F/5ne6bNzzLvqiEJApwdybjbwCPQU5hIcbGyL2s14Wa4nT39e7dM4Sw6u7BBzrd9rYmObdwNwZSg6+XzBa3SmGsWQ9G5tvRbjkd2IY4ereiZmpKhQ1a93Lnp/yUwrLIBNZpyUS2thAIh/0HHP2fI9Mt+xLU8vwt4RfXvlP3hkF7Op0u0k+UufepkAb6iwuLIEibbZcH2rUbAf5OegU1bt2IpsJc8pJttYXJTY83Ejc23cJ1rt0zhIDedHQ9Tv5bt/khfq8Xaw5SuhbAZKVncJc1mKYXY35VoRLfieGEa7unZiZqkJRs9YJXvH8lB9UWDKR9bXEaWwgkR9yv9n5JSoLu4YXd1I99yJs9OaEPYImN92Vkk6FneVShdu/RTMOuXUteslj34zd7sDbwJLYed2kM+LpO21oisKEhYebLVkvrFWc/r7epTOWWLBBYN7xNJE1T3DeB/x3j/cv/N7muk5BJhvGlPlWhEt+J4YRru6dmJmqQlGz1r3s+SnLCkverIyJ0zl8CrNqlqB1ym2JgE5FV27RG/r7+Cus/g0SSyT5fWMVugZ3k2OKttVxF1tLqF/E1z9K7XyjS6PnE/b2gd7QmNvuoT5b91thUTD6OdMP9Jhe3CunP5Y2OpH/RHZ1Ptr+IMONKPc4r35prULW8a90QmLJTBOtzmTvXIy7I87zlt127VUIDlWN0PYIsVftwnY1+SbW5E0Y1qO1MY4/39FRJ8byy4xchqJmsrzh+SkLCjus+B8H4+/C629dzCL7F20Jx/Oz+MmpXC6P8Lyb/4FA/8fBc/xHDN5fX5llYfrKGaVtTox93wQakd9A5FNrbrX6CqDvW5SGoXN9xivwj6f4SP2cnZ7KJMsHsMwZvi9dMib+oDqRqO8Yjd3ppVNJz/84EJ1wTQHOVza1IV46/Z1N/RWm0Vz3nyeYxUHof0RMcb41m5xr788djAsnDRsaTUsUhxtk6T39ptVmP7ZxdQz5dxj0q2Bs9WOEdH3MeO3a/dasXZXzrVkT5Yzt/bg4esfzHsIKS3uuB/5a8SeayieFtcpOQt8iPpYKdND/qMv6tQb5L5be+TddznzKD5UV+pse4stArO41/91J5Fzxf7pWPZwfh6/uF9ST77HO7pPbPJtK/9CH8GKa1dMXVJNtD+eCv0yp23n6Sym/uLmGRZfOdsJA7rnHMDH3yJox/bbYrF2qW9vZQqPJZ/7QFvInVlhf476SofwnVoVVyccps+Teb0lYBniM3xrploClzNBwTKAqFhPy05x9VdDucHsVHs/7WbEPCwD4bbjXNPwE9p7AF/gez0NhAfijWT4DEKy/LAFW8i2eh8IC8Kfjbj160Ytb8I183fNQWAD+YAb1C6w7/auMhKF/mn8at/YbFWAd3+R5KCwAfzD6uCV8aUz+J/0Xv5wIFvkmz0NhAfiDGdpC/vr87lw2Hbk2xqZRjzv/Yc/ZG33gTb7J81BYAP5whmdbu9cP1R3AorqvuAQI3uQbPA+FBQCAWEBhAQAgFlBYAACIBRQWAABiAYUFAIBYQGEBACAWUFgAAIgFFBYAAGIBhQUAgFhAYQEAIBZQWAAAiAUUFgAAYgGFBQCAWEBhAQAgFlBYAACIBRQWAABiAYUFAIBYQGEBACAWUFgAAIgFFBYAAGIBhQUAgFhAYQEAIBZQWAAAiAUUFgAAYgGFBQCAWIQVtsk2AbLm1/C8F+n+VD1VYptHsdsVD/Xhdfq2zo6pt+Qv8DWjhE1b1u5/BBEfjuBZHVVPYBxlNSSM9RD62eZY/UfHJedbL0qkdOVBxm+y/yWdMNID6LtbfvpwC3f7/3aXZvVjYDEr2k/ttjODv4ygwj6r06nq1J9H3ZF+9U22y5q22G8T07u+k2edRir5ffrb5WPLhsk/RGHjPRyL/nbebNKaVDHcr6zaUnQa0U2kfHKp0q7reK/imVj+JEk2B5nahpXCrN98Zq0KeBR79qmJJU+svm3o6fKqVYP6tjwlm0SPiaX2M8KZwV9EWGFvte7itsJyDRQRfNzEGcS0uj8DMUX5FoUd7pdAOV15/a5Wx3s4Bls3NVa1bW3Uh6Zs65uIaLJrnn9ukuudSmdfp4frlXS46P2BPRP/06VVi7l1opR/of2Mmczg72HNPqy3i9Pe9J3EH1Gvw236DoXlSwB/OWx2l3xbq+M9HMOywmh8KXkom+PWqZuBCVFat6QH/EB/8Js4qZon05+X2z+TGfw9fFFhu66+7Nn65yOt1QKIbqN2dfqRJPuseVSZr3P1TZ7u+Bpte7hUap/Krm54VJfDB181Jh+Hy03V4Sl1vqJXjPJWyW3aZLe2OLGY5ONUtGbm1d0yHsibcC5bvjAWiRliAKoPvEGs3p2I4Nijk3nhwEsQyKYLK6hj/L7w+nDNw+F/893HXjZqe8jNQpwFyRI123wy91pWGI0vJQ9lYUOTfW4+rcLb/JA1A+1w9FMYn3/4lvT5kApXMHdarjCt5B3h5jXRrVq8EN6dw5LM4O/hSwq7S6WkPIqDGid0G7W/nffyWKW/X89uCXx87dRu3ZNvdV5uYohb1Q23S3KQJbCSVQf1lDpf0WtG+aoUNm1O5YPb2jMZ0Ic0rLCtDn7wvbadlIuutOa8YkNOViTK8Y1lOjqf9fl6e3JvMLVhRvCltN8wvw+XHw4zPOFidMzuHcvB1snJ5iQX9lwLPq93npdPrDf+4yhehQ/TBgNPOW2yUFjuKONLbsVVbFzSDuftflN8/mmLHW+kdoWoTIkc+5vvi/K2d6zaGYWVW6mD8IV+vmvaP5MZ/D18zy6BPYis1M/6lByymxCgKSx2c3F24TiT6vruxiYi5jTCU+p8RYzVRimcKkV+aww2mRSeNv+0myD22sRnkt6unJZjYfuTF0sxWaa+8PlwzcMJ2tiyxl2t4LC9bgSp1uBLyUNlmNB2eeDFKktr/lhsK91PC7gPjtpkTOHHaXupfgz2uvG3klf9eUrVEmGX5urwjrHc/pnM4O8hqsL+GtriyPsXW1dP+5evj3JIAY8y/dhfyvujv5vknlJnK2KsNipQJc9vGauK4/pmxIhjnELSW5U75VjY/mR/6z8tfIYFfGgXRtJYpgRt/PUoD1t57M1m+Z+TsyiJr2ZSrcFvo1ZY+T7hlbT5TlVlG+N+CuN9cNQmYwqv0yrTb+Js1b4spK7VdoP/auIqrGB4NlXGNM29h8n1aZxHjFgFyLmiHOBOl/aUGqqIsdqoQJU8/1g7P3sWC28+3ZMrcElzVR/JrEhWLhpKy7Gx/cnG/1TXvIYFfGgXZrWC+oHYYkfwrYfjgU8Erd1xF7tUDanW4EvJQ02YPPA6ncwimhjjfJI8q9zduwj0FWKTCe9YmdaD85vor1rhy0LqmssM/h7WKKy8kDjqiMC++zdwPdG9W6SWnfdZnS9yO5GH2lIkEHuBaheT0RaF6LFjAeIWjaiECWLGVuBivugpdaGiF4zyV8mULE02x0Ls5vH7AInasxT7a7tMbFryD1sVLgebcM/znp92bMYsp4VMg3mRnbzyZsHHPJPhoalZYXy7YXeulGeGe152AcP8PlzzcFglTGGvd/G3iNDb07ezzhtGlOreB+Vhk6ziZeOkFKFjmLwCO6qRsNJ0OP4pscRs4AeDk+9TBPwTcgWXv+Qg1zByH3az3eZjJRJqiM2K9oczg7+IJYXlSmEw3XwMZcPC/mC+riMSs5lG3Yk1OT1+N5gT883HIb3y41/e8xWsALWg3x7ZUGiLfbI9MDHzlDpfES1zwShvlTxC3xlwdtRME/gBtjXhExcW+CTw1nVVeriUjRiNTKrlPYZpvTkrZqvPus1xPiv2XHIrQ4ZNfLjq4fzb9onj9Cbb8/MhDTmA51jJRR2TMF6KwJeShOowpvZq0k47nPvdKI1n3u7zz/+FXMFqZenlxRDWuib7OOW3bnyqDGqIrb0r2k/sJpk5j2LnW2iB/0bWzGHBX0V3K8arYJyhLStMxQB4BygsIDzr0+e5auU2CmPo29pRXADAWqCwgDI86izdi5v7m+3ueC7uanEPAHgZKCwAAMQCCgsAALGAwgIAQCygsAAAEAsoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALGAwgIAQCygsAAAEAsoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALEIKeyzOm4mHKvnr19Npj5RskblJAlEjq9BLRmreZ3hec+P26+UAAAArzAzh+3v2U7pGuNc9yqc8bxd7aibFSV5FHua40v0t7Oq6l2FfTblZZ98pQQAAHiZ2V2C4X6RqsT4zFsVKiBRWTOoYE1XHq53N/B9xmnxy/rYP+rsuFW5OVBYAMBPsbAPy5RSCdNmk9I5aVfuVcRmc3HUtM133ymwX1DYtjikl/xiaSwUFgDwUyyddNm7oM6mqi2xVH2b7Jt3O78wh5V8fZ8BAABeZklhf/V1qqRpszmUnQplDPer2ScgEssidnRLQcCX6+mOzyWTj8Olekw2aZ/34nz44GVud2l+t9V8qrD2cdqaA7UvazQAALzMosISJbU2Y5nyHopijDLq6xXYrk65tu7Ejm1X8nmx/FsxNBk/iEpOFSulv18/9d8Srz7y07TNNi3bNQdqUFgAwM+zrLB8V5UJniTR+tSVBz5ttaKUxA73y96e6nL0bq6e6KqtB6PX+tjMBCg9NBNjjz5yTd5nzRp15UBhAQA/zxqFJRIrT7DYNFT+YUUJfexvZ7KXwGkyNdPV4qY3d5Wimr1es9jXeqjvgbn6OLT5KS0fL5ylQWEBAD/PKoU1k1COnLqyNb6MohL7rNPJnqh9IuYgFJTNYNXHCXpSS/Sxu513ZA9hDVBYAMDPs05hyXnXsSztnVZLfZPzObWOvBSjuLmXuiTjdYXJ9oJmLOJwOKgJ8WsaC4UFAPw8KxWWnHc5lwrsCa7v+12t3iQY91kJz/qk4n25BaM+pvWzq06qwON6jYXCAgB+nrUKSyTWmadad2Z9s1TrLurnldwfKKVCWhsNRDO7qlTFOfo4NPr7vJM93xBQWADAz7NaYUchVIddFnoPYRojYBJrxDk5ydtVQ1dfMp26zcdfOdhdb08e3Df5xcjnVB9Nlm1arxBZa68XCgsA+CleUFi1HeBb6stpqrnKNeEpr8Pa0Ouwba5+l8Vgb7Nas+C01udo96sKEqKsAgPIG7aSQ776ihcAAHyJVxRWzFX963K+h+DfZdX0j+py1F/pOnu+JvC85+lef6Uru5larD0IibisMM5qJaFvdbnpDJjKAgCi85LCAgAAeAEoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALGAwgIAQCygsAAAEAsoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALGAwgIAQCygsAAAEAsoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxCCnsszpuXI7VU8Uu0+ZFo/78Mk2mDHjNhDmIeY/yuN0k+7wdVMC38oYnAs73BWeNL5RyrP49elDwmbeqqpE23yWJiucc//U/6i+L7Nse6hLzD93b6ORjfzwXt64XSawCDMx8T/CxKBZLA+A9Zuew/e2sutv59kpHG5ps972DsSvlGPgWhXXNi6iwX/BEwPmPYi9D98VDBDCxSU5l68iKqrNvy1OinPYo0sNBaehEYof79ZznSmh00QxT3Wc2FeXILD30Z52KeNnYvq3OO/FxlzX6SU68JfC6dkVpALzM/C6BO2DX0DfZno/j93QlgJ6zfF1ho5jn54tV+Z1vZm/aFc8qr41MePJ05VWmfFZZVeefMj653m3dYAJ7vXdu0YxJdT/I4kPXrdWNNcbuy84JoWV4XbtcGgAv86rCmpDN5lo3ebrb8vVUWss+OHRVygIsWMYxC+/m3e1y2G62evLAJlnnwwfXoe0uze/2MBgeFU/Kij8VtVrHqYFCizRDgY6YvinOPL8ouuCTPJ95tCiV02+UVc+xuDHjeJLtIffNcbyeEHS3THiNtetwqR5GHCdMnc8JaIbCn0fCFfbZlQeVIh11+VdfX9ik1lf0fHUhnnfmeuFA9vDyRlU0utrXdyQzD32KLtA0dtL8gPleNy2XBsDLvD6HHfQSiy2fejY25drqVOsePOmo41rtWDRdr1ZjPFqsoVkwnyPIv5NTpcablILkzMvtH2ytyzONA8UUKQKMTaZSNinj4/TChFwlVZo+NY8WNWuUSSuDWjkjTAILaI8nuoo35PN6Z7bIv8OLUP8A/6LCMsdcpCs3BzM168oz//ubFPZZs3YJ9+nVuKlpqe8sPHQX18HGWFPhVxR2WhoAL/PGLgHtiW6/nAZYfVWo3NBmu13WDmo8mc7fZmJAyTT3q/hwUWtZXYIZKE6AW6nSvqv42BZssb7lYsuYmkeLmjGKQdNOrKJMqtKtUgFMivgn37ETR2cP4K3U5LG8r5EKa3wzVtyVmZjP6ubYRfvC5lE5hCxpc/RjdFziOGjxobuQ/HznVDbMemkZ8wPYblouDYCX+VGFpRtaXSnng+6A4p+VsJlCJoPNCXAqdbNbTM0jRc0Z5aadWkVxq2LTR/HZuEElCOzz6ey0FbpOf6X+PBKtsPolwiaLYjO2zdXLx1f0fHU+hjbnL7SUz0Obq5OZusRx0OJDdzGtlWx3+/RSkp2mgPleNy2XBsDL/KjC+ru5TminmovzBTjpPTZoplGkqIWK6ceJVZTFRsyYydCxNFoX4q/Un0diFNYsz/lmbMfPuOjbxC56vrowfXfL0/SopDzQYqf9rjsW3DvNMCVgvtdNy6UB8DK/UWH1dFEn1EfZfLroFjIpwQlw0uuPnrE5NY8UNWcUg1brb5fBrUrPYU1yNcX76TnsuB5ni/ljajYpfEXPVdfm+bQWRn+/slns57UZJs+BusRxkPNxyb3TDFMC5uuMJOdyaQC8zG9UWL0hqA86VEZxxq1nWe7+p7nW6BTpVNrfzlJBpoNzah4tasYoBk0baJdmUpVqlT4ZU9kX92EtT451+iv155FYCmvtFFjHOL6iw9UxH+98lre5uEcqXhvaHJOZusRx0OJDd3HyewiY73XTcmkAvMyswnpvZpvz4PONTetMEvGJo8cuy9JVpeit+gTeHSr2Uf3QXJm0mWN7fhzGs8gzaXWxVKDGilJCcRFenspzRitUEC+Qm/koc3kraGqeY92MUW7aULsUHk+Y+wPMnXJ6HDxI8Tp/rNNbaSCPYGiLtBi/VKHkzL6z1WbCpcrpElPd6FrG0N34NHW8BDCiNY2/NyYXbBf6zuJDp5jvCEwbq/F7y+umFaUB8DIhhTUvfwvezc3bn3PMMiuVGUaPMv1IxI1GMaBJFneGIC6t6qunWf0YR7G4OStunB7zpq1Sfu5Qt1wuJUwxjvxaqbjselNHKtZYFDcrdcnWTVvHPGKdnkz5jaI+yTJPTorrCRlWj/dhz4W+K0oION8XbOqdjbQbaR7T/ZqY7x3QZyTwfmuW4m203CPgl33LpmtyfbmVOWBF31l66BpPa11jPE3iaXwt9Xxr1ts0AF5mfpcAAADA+0BhAQAgFlBYAACIBRQWAABiAYUFAIBYQGEBACAWUFgAAIgFFBYAAGIBhQUAgFhAYQEAIBZQWAAAiAUUFgAAYgGFBQCAWEBhAQAgFlBYAACIBRQWAABiAYUFAIBYQGEBACAWUFgAAIgFFBYAAGIBhQUAgFhAYQEAIBZQWAAAiAUUFgAAYgGFBQCAWEBhAQAgFlBYAACIBRQWAABiAYUFAIBYhBT2WR03XpKP/fFc3J8q3Ts8yuN2k+zzdlAByzSZqt4ia3zBx+o/IdMNnjTnW6+qMvT1OUlUtOB//jUt+FjNe2LixzUVsZa9gVXVklUAgJ9hdg7b385qyMoxP3RNcZJakJyqTqR5gzcUVvAo9qLuzb54qCDGaKQSL6Y0yalspZAZDVaq1bflKVECxHIeDgcVn9aO8nXlKc+vKnbUxbG6tF4rY29V9A53VQwUFoA/g/ldAlefGJ2eKSVZq4J+CjNJowLiGvms8lHEfC0oryp/k2V1naoEh5K8MrryXHae3L4SF3mrojfQxUBhAfgzeF9hLaF43ovz4YNPbpOPU96Ms7DudjlsN5ttWj66OhfD3hRpy8DwqLOTKuBwqQOz45UKS1iIzJrhflUr9M/cemW0+YXJtC/3bIkB3qoo6FaTWDhC+ngrJr86RjrI3qHIGusTr4QWQhIfiyrnj41XW7y60AAAWLyisEPf3bODGPH7y03L4LM+JZsjl1u9gNba25V8ZSyW9M/bdafVQy/2jU525ZEVemDpBlkCkaCRKAqrzWQk17uSE6aG4m9f7tkSA7xRUditDOPCoun6p5wd85y6GOOgR3HY7M7qlaW8qyuZPIc2/xQBmx17H/wamiv/mJxWb4YAAFxWKqzFx+FaqU1OjpI9Mfx18osUEPkxOZUP9pHphFIPLZRqZPdSII5iX5el4lu09j7riDXN8mLUyWIqXRZS+LQFDLVHOtwzqfG+3LMlBni9ohm3jrFq23Zos90u45NNnVK5trud9/Z+uY6WlTjPYRqgFDfwvgMALPPaLsHw5AdFPCA5qIOqoc33yWYrjn0aetBi5mxim0CrgzOQ2VzN+jSL0RWadqJONguRMnRcwAtF6+uLEhVf7tkSA7xe0YxbGdoT+3FaK9DFsNdV3xbHbUqdqqNlJYsKO0kAAHiRl/dhmW6qE/3ECuy7W56mR6WoZkj29+tOBrGl51ltLNCB+8Iw1kmdtLOStxCpQ80CmU3YxNGTDPblni0xwFsVMQJuDTpNF/O53/N9VLKzwNDRspJJIW7AC48GAODldYU1u3l65DEZZdOtz2sz6ORkSHb1hUVz1PYjHbj6k63XAXRSZ8gH1EmyEGlCxz3S4zEzVxF8uWdK7OvMf4ftnYrm3BrSPp1yXzT3TL7bdtYaX0fLSiaFuAGhWgAAa3ldYc0sTApmm4uRLNarjhQ0md455AcuJtwZuI9CSsEnP16ZRWd0hrzPSMNC5BhqFvDjMZQ/d7hE5orAddbXK5pxKyOkfSRlV8kNHXFuRaJlJZNC3ADswwLwVWYVVp9i8xMVPkiHvq3OatnPxISPQz0q+TA0F7nUEGUDmh9zMc2RMWrJqs+w9XkWm6Op6VZ25/r0vOWFV2xXfuPAZj6yPp/NLFILiq0n6pSeMYrhWKJtBfNMmW5Dd4Rfr2jOrQzXhRrzjQPpaSbmH+IzE1levbad7+722utjIbpSlVy+FnGXAIAvEFJYM9pctrt9mlWNGXVyMcuvsZZN14h7lPoaJZ+59Y+KbxKMFzrNbI2jZ2x9k6c7eQPzcKm4JjuQXAqW2RM8mZHZmJkkidShfAGvNy59uX3fmqWMGqh5qyKWbsatTqv9beLBkwBW801s2Yhbx/fSRMsydPpjcavkPeZdivuwAHyF+V0C8DdhFHbyngAAvAcUFmigsAB8N1BYoGkzeYbp7u4CAN4FCgsEdNMW81gAvgUoLAAAxAIKCwAAsYDCAgBALKCwAAAQCygsAADEAgoLAACxgMICAEAsoLAAABALKCwAAMQCCgsAALGAwgIAQCygsAAAEIdfv/4fVrZJnwEPq04AAAAASUVORK5CYII=" alt />
+<span class="co">// Output: Khalid said 'Hello World!'.</span>
+<span class="fu">echo</span> <span class="st">&quot;Khalid said 'Hello World!'.&quot;</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 
-</div>
-<h3 id="lists">Lists</h3>
-<p>There are three kinds of lists that you can use in HTML. Their usage is explained in the following subsections.</p>
-<h4 id="ordered-lists-ol">Ordered Lists <code>&lt;ol&gt;</code></h4>
-<p>This is to be used when you wish to have a numbered list. It should have several list items <code>&lt;li&gt;</code>. A sample list is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ol&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Ordered List Item 1<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Ordered List Item 1<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Ordered List Item 1<span class="kw">&lt;/li&gt;</span>
-<span class="kw">&lt;/ol&gt;</span></code></pre></div>
-<h4 id="unordered-lists-ul">Unordered Lists <code>&lt;ul&gt;</code></h4>
-<p>This is to be used when you wish to have a bullet list. It should have several list items <code>&lt;li&gt;</code>. A sample list is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Unordered List Item 1<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Unordered List Item 1<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>Unordered List Item 1<span class="kw">&lt;/li&gt;</span>
-<span class="kw">&lt;/ul&gt;</span></code></pre></div>
-<h4 id="definition-lists-dl">Definition Lists <code>&lt;dl&gt;</code></h4>
-<p>This list is to be used when you wish to create a definition list much akin to that in a dictionary. Each item in this list will have a term <code>&lt;dt&gt;</code> and a definition <code>&lt;dd&gt;</code>. A sample list is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;dl&gt;</span>
-    <span class="kw">&lt;dt&gt;</span>HTML
-    <span class="kw">&lt;dd&gt;</span>HyperText Markup Language
+<span class="co">// Output: Khalid said &quot;Hello World&quot;.</span>
+<span class="fu">echo</span> <span class="st">&quot;Khalid said </span><span class="kw">\&quot;</span><span class="st">Hello World</span><span class="kw">\&quot;</span><span class="st">.&quot;</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 
-    <span class="kw">&lt;dt&gt;</span>HTTP
-    <span class="kw">&lt;dd&gt;</span>HyperText Transfer Protocol
-<span class="kw">&lt;/dl&gt;</span></code></pre></div>
-<h3 id="images">Images</h3>
-<p>Images are a significant part of the web today. The <code>&lt;img/&gt;</code> tag is used to link image files to your HTML file and it comes with several attributes. We will discuss the <code>alt</code> attribute here and other attributes can be checked over at the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes">Mozilla Developer Network</a>. Basic syntax for linking images is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;(your image link with extension)&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Your alternative text&quot;</span><span class="kw">/&gt;</span></code></pre></div>
-<p>The <code>alt</code> attribute is used to display the text you choose when a browser is unable to load the image on your webiste due to an incorrect link, corrupt image file, incorrect extension or if the end-user uses a text web browser.</p>
-<p><strong>Note:</strong> The <code>&lt;img&gt;</code> element does not require a closing tag<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. It does however still need a <code>/</code> before its closing brace, hence <code>&lt;img src=&quot;&quot;/&gt;</code>.</p>
-<h3 id="hyperlinks">Hyperlinks</h3>
-<p>Hyperlinks enable us to link text or images to places such as other websites or other webpages on our web server. The syntax for using them for text is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;(your link here)&quot;</span><span class="kw">&gt;</span>Your Link Text<span class="kw">&lt;/a&gt;</span></code></pre></div>
-<p>If you wish to add links to images, then use the following syntax:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;(your link here)&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;(your image link here)&quot;</span><span class="kw">/&gt;&lt;/a&gt;</span></code></pre></div>
-<h4 id="links-within-documents">Links within documents</h4>
-<p>The lecture slides show how to do this using the <code>name</code> attribute of the <code>&lt;a&gt;</code> tag but this has become obsolete since HTML5<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. This has also been explained in a StackOverflow <a href="https://stackoverflow.com/questions/484719/html-anchors-with-name-or-id">question</a>. The recommended way to do this now is to utitlize the <code>id</code> attribute with <code>&lt;a&gt;</code> or header tags or any other text related tags. An example is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">Go to <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#Section_1&quot;</span><span class="kw">&gt;</span>Section 1<span class="kw">&lt;/a&gt;</span>.
-
-<span class="kw">&lt;h2</span><span class="ot"> id=</span><span class="st">&quot;Section_1&quot;</span><span class="kw">&gt;</span>Section 1<span class="kw">&lt;/h2&gt;</span></code></pre></div>
-<h3 id="tables">Tables</h3>
-<p>Tables in HTML are aking to their counterparts in print and are used to display tabular data. The simplest syntax for a table is as follows:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;td&gt;</span>Khalid<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;td&gt;</span>Hussain<span class="kw">&lt;/td&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;tr&gt;</span>
-    <span class="kw">&lt;td&gt;</span>Sajid<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;td&gt;</span>Hussain<span class="kw">&lt;/td&gt;</span>
-  <span class="kw">&lt;/tr&gt;</span>
-<span class="kw">&lt;/table&gt;</span></code></pre></div>
-<p>A more structured table can be achieved as follows<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>:</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
-  <span class="kw">&lt;thead&gt;</span>
-    <span class="kw">&lt;tr&gt;</span>
-      <span class="kw">&lt;th&gt;</span>Header content 1<span class="kw">&lt;/th&gt;</span>
-      <span class="kw">&lt;th&gt;</span>Header content 2<span class="kw">&lt;/th&gt;</span>
-    <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;/thead&gt;</span>
-  <span class="kw">&lt;tfoot&gt;</span>
-    <span class="kw">&lt;tr&gt;</span>
-      <span class="kw">&lt;td&gt;</span>Footer content 1<span class="kw">&lt;/td&gt;</span>
-      <span class="kw">&lt;td&gt;</span>Footer content 2<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;/tfoot&gt;</span>
-  <span class="kw">&lt;tbody&gt;</span>
-    <span class="kw">&lt;tr&gt;</span>
-      <span class="kw">&lt;td&gt;</span>Body content 1<span class="kw">&lt;/td&gt;</span>
-      <span class="kw">&lt;td&gt;</span>Body content 2<span class="kw">&lt;/td&gt;</span>
-    <span class="kw">&lt;/tr&gt;</span>
-  <span class="kw">&lt;/tbody&gt;</span>
-<span class="kw">&lt;/table&gt;</span></code></pre></div>
-<p>More information about tables can be obtained from the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">Mozilla Developer Network</a>.</p>
+<span class="co">// Output: Khalid said 'Hello World'.</span>
+<span class="fu">echo</span> <span class="st">'Khalid said </span><span class="kw">\'</span><span class="st">Hello World</span><span class="kw">\'</span><span class="st">.'</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
+<span class="kw">?&gt;</span></code></pre></div>
+<h2 id="forms">Forms</h2>
+<p>One of the ways data can be transferred from end-users to PHP is through HTML forms. This section will help demonstrate their usage. The following is a sample HTML form<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;action.php&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;p&gt;</span>Your name: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;name&quot;</span> <span class="kw">/&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;p&gt;</span>Your age: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;age&quot;</span> <span class="kw">/&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;p&gt;&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span> <span class="kw">/&gt;&lt;/p&gt;</span>
+<span class="kw">&lt;/form&gt;</span></code></pre></div>
+<p>And here is the corresponding <code>action.php</code> file which is to be used with it:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">Hi &lt;<span class="ot">?</span>php <span class="fu">echo</span> <span class="fu">htmlspecialchars</span><span class="ot">(</span><span class="kw">$_POST</span><span class="ot">[</span><span class="st">'name'</span><span class="ot">]);</span> <span class="kw">?&gt;</span>.
+You are &lt;<span class="ot">?</span>php <span class="fu">echo</span> <span class="dt">(int)</span><span class="kw">$_POST</span><span class="ot">[</span><span class="st">'age'</span><span class="ot">];</span> <span class="kw">?&gt;</span> years old.</code></pre></div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>https://css-tricks.com/snippets/html/html5-page-structure/<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Summary<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#More_Examples<a href="#fnref4">↩</a></p></li>
+<li id="fn1"><p>http://php.net/manual/en/language.variables.basics.php<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>http://php.net/manual/en/tutorial.forms.php<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
             </div>
