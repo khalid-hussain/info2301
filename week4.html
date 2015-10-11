@@ -121,9 +121,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="co">// &lt;pre&gt; tags help code readability</span>
 <span class="fu">echo</span> <span class="st">&quot;&lt;pre&gt;&quot;</span><span class="ot">;</span>
-<span class="fu">print_r</span><span class="ot">(</span><span class="kw">$names</span><span class="ot">);</span>
+<span class="fu">print_r</span> <span class="ot">(</span><span class="kw">$names</span><span class="ot">);</span>
 <span class="co">// The following prints a more detailed view of the array</span>
-<span class="co">// var_dump($names);</span>
+<span class="co">// var_dump ($names);</span>
 <span class="fu">echo</span> <span class="st">&quot;&lt;/pre&gt;&quot;</span><span class="ot">;</span>
 
 <span class="fu">echo</span> <span class="kw">$names</span><span class="ot">[</span><span class="dv">2</span><span class="ot">]</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
@@ -133,8 +133,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="associative-arrays">Associative Arrays</h3>
 <p>Arrays can also have a string or a mix of strings and integer indices instead of indices consisting of integers only as shown in the last section. The following snippet demonstrates this:</p>
 <div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="kw">$organic_food</span> = <span class="fu">array</span> <span class="ot">(</span><span class="st">&quot;a&quot;</span> =&gt; <span class="st">&quot;apple&quot;</span><span class="ot">,</span> <span class="st">&quot;b&quot;</span> =&gt; <span class="st">&quot;banana&quot;</span><span class="ot">,</span> <span class="dv">45</span> =&gt; <span class="st">&quot;carrot&quot;</span><span class="ot">);</span>
+<span class="fu">echo</span> <span class="kw">$organic_food</span><span class="ot">[</span><span class="st">&quot;a&quot;</span><span class="ot">]</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
+<span class="fu">echo</span> <span class="kw">$organic_food</span><span class="ot">[</span><span class="st">&quot;b&quot;</span><span class="ot">]</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
+<span class="fu">echo</span> <span class="kw">$organic_food</span><span class="ot">[</span><span class="dv">45</span><span class="ot">]</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span>
 
+<span class="fu">echo</span> <span class="st">&quot;&lt;pre&gt;&quot;</span><span class="ot">;</span>
+<span class="fu">print_r</span> <span class="ot">(</span><span class="kw">$organic_food</span><span class="ot">);</span>
+<span class="co">// The following gives a more detailed view of the array</span>
+<span class="co">// var_dump ($organic_food);</span>
+<span class="fu">echo</span> <span class="st">&quot;&lt;/pre&gt;&quot;</span><span class="ot">;</span>
 <span class="kw">?&gt;</span></code></pre></div>
+<h3 id="multi-dimensional-arrays">Multi-Dimensional Arrays</h3>
             </div>
     </div>
   </div>
