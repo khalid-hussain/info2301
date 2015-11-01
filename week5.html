@@ -68,6 +68,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <ul>
         <li><a href="#retrieving-data">Retrieving Data</a></li>
         <li><a href="#sorting-retrieved-data">Sorting Retrieved Data</a></li>
+        <li><a href="#filtering-data">Filtering Data</a></li>
         </ul>
         </div>
       </div>
@@ -417,6 +418,97 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
+<h2 id="filtering-data">Filtering Data</h2>
+<h3 id="using-the-where-clause">Using the <code>WHERE</code> clause</h3>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> prod_price = <span class="fl">3.49</span>;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">prod_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fish bean bag toy</td>
+</tr>
+<tr class="even">
+<td align="left">Bird bean bag toy</td>
+</tr>
+<tr class="odd">
+<td align="left">Rabbit bean bag toy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-clause-operators"><code>WHERE</code> clause operators</h3>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>=</code></td>
+<td align="left">Equality</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&lt;&gt;</code></td>
+<td align="left">Non-equality</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>!=</code></td>
+<td align="left">Non-equality</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&lt;</code></td>
+<td align="left">Less than</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&lt;=</code></td>
+<td align="left">Less than or equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&gt;</code></td>
+<td align="left">Greater than</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&gt;=</code></td>
+<td align="left">Greater than or equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>BETWEEN</code></td>
+<td align="left">Between two specified values</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>IS NULL</code></td>
+<td align="left">Is a <code>NULL</code> value</td>
+</tr>
+<tr class="even">
+<td align="left"><code>IS NOT NULL</code></td>
+<td align="left">Is not a <code>NULL</code> value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="checking-against-a-single-value">Checking against a single value</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> prod_price &lt; <span class="dv">10</span>;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> prod_price &lt;= <span class="fl">5.99</span>;</code></pre></div>
+<h3 id="checking-for-non-matches">Checking for non-matches</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECt</span> vend_id, prod_name
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> vend_id &lt;&gt; <span class="st">'DLL01'</span>;</code></pre></div>
+<h3 id="checking-for-a-range-of-values">Checking for a range of values</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> prod_price <span class="kw">BETWEEN</span> <span class="dv">5</span> <span class="kw">AND</span> <span class="dv">10</span>;</code></pre></div>
             </div>
     </div>
   </div>

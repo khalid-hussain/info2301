@@ -11,7 +11,6 @@ CREATE TABLE `products`(
   PRIMARY KEY (prod_id)
 );
 
-
 -- Sample Data
 INSERT INTO `products` VALUES ('BNBG01','BRS01','Fish bean bag toy',  '3.49');
 INSERT INTO `products` VALUES ('BNBG02','BRS01','Bird bean bag toy',  '3.49');
