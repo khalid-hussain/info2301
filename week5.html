@@ -67,6 +67,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </ul>
         <ul>
         <li><a href="#retrieving-data">Retrieving Data</a></li>
+        <li><a href="#sorting-retrieved-data">Sorting Retrieved Data</a></li>
         </ul>
         </div>
       </div>
@@ -201,6 +202,221 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Input</p>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> vend_id
 <span class="kw">FROM</span> products;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">vend_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BRS01</td>
+</tr>
+<tr class="even">
+<td align="left">BRS01</td>
+</tr>
+<tr class="odd">
+<td align="left">BRS01</td>
+</tr>
+<tr class="even">
+<td align="left">DLL01</td>
+</tr>
+<tr class="odd">
+<td align="left">DLL01</td>
+</tr>
+<tr class="even">
+<td align="left">DLL01</td>
+</tr>
+<tr class="odd">
+<td align="left">DLL01</td>
+</tr>
+<tr class="even">
+<td align="left">FNG01</td>
+</tr>
+<tr class="odd">
+<td align="left">FNG01</td>
+</tr>
+</tbody>
+</table>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> vend_id
+<span class="kw">FROM</span> products;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">vend_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BRS01</td>
+</tr>
+<tr class="even">
+<td align="left">DLL01</td>
+</tr>
+<tr class="odd">
+<td align="left">FNG01</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limiting-results">Limiting Results</h3>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name
+<span class="kw">FROM</span> products
+<span class="kw">LIMIT</span> <span class="dv">5</span>;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">prod_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fish bean bag toy</td>
+</tr>
+<tr class="even">
+<td align="left">Bird bean bag toy</td>
+</tr>
+<tr class="odd">
+<td align="left">Rabbit bean bag toy</td>
+</tr>
+<tr class="even">
+<td align="left">8 inch teddy bear</td>
+</tr>
+<tr class="odd">
+<td align="left">12 inch teddy bear</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorting-retrieved-data">Sorting Retrieved Data</h2>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name
+<span class="kw">FROM</span> products
+<span class="kw">ORDER</span> <span class="kw">BY</span> prod_name;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">prod_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">12 inch teddy bear</td>
+</tr>
+<tr class="even">
+<td align="left">18 inch teddy bear</td>
+</tr>
+<tr class="odd">
+<td align="left">8 inch teddy bear</td>
+</tr>
+<tr class="even">
+<td align="left">Bird bean bag toy</td>
+</tr>
+<tr class="odd">
+<td align="left">Fish bean bag toy</td>
+</tr>
+<tr class="even">
+<td align="left">King doll</td>
+</tr>
+<tr class="odd">
+<td align="left">Queen doll</td>
+</tr>
+<tr class="even">
+<td align="left">Rabbit bean bag toy</td>
+</tr>
+<tr class="odd">
+<td align="left">Raggedy Ann</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sorting-by-multiple-columns">Sorting by Multiple Columns</h3>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_id, prod_price, prod_name
+<span class="kw">FROM</span> products,
+<span class="kw">ORDER</span> <span class="kw">BY</span> prod_price, prod_name;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">prod_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BNBG02</td>
+</tr>
+<tr class="even">
+<td align="left">BNBG01</td>
+</tr>
+<tr class="odd">
+<td align="left">BNBG03</td>
+</tr>
+<tr class="even">
+<td align="left">RGAN01</td>
+</tr>
+<tr class="odd">
+<td align="left">BR01</td>
+</tr>
+<tr class="even">
+<td align="left">BR02</td>
+</tr>
+<tr class="odd">
+<td align="left">RYL01</td>
+</tr>
+<tr class="even">
+<td align="left">RYL02</td>
+</tr>
+<tr class="odd">
+<td align="left">BR03</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specifying-sort-direction">Specifying Sort Direction</h3>
+<p>Input</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_id, prod_price, prod_name
+<span class="kw">FROM</span> products
+<span class="kw">ORDER</span> <span class="kw">BY</span> prod_price <span class="kw">DESC</span>;</code></pre></div>
+<p>Result</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr class="header">
+<th align="left">prod_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BR03</td>
+</tr>
+<tr class="even">
+<td align="left">RYL01</td>
+</tr>
+<tr class="odd">
+<td align="left">RYL02</td>
+</tr>
+<tr class="even">
+<td align="left">BR02</td>
+</tr>
+<tr class="odd">
+<td align="left">BR01</td>
+</tr>
+<tr class="even">
+<td align="left">RGAN01</td>
+</tr>
+<tr class="odd">
+<td align="left">BNBG01</td>
+</tr>
+<tr class="even">
+<td align="left">BNBG02</td>
+</tr>
+<tr class="odd">
+<td align="left">BNBG03</td>
+</tr>
+</tbody>
+</table>
             </div>
     </div>
   </div>

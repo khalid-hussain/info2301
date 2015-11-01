@@ -22,8 +22,3 @@ INSERT INTO `products` VALUES ('BR03',  'DLL01','18 inch teddy bear', '11.99');
 INSERT INTO `products` VALUES ('RGAN01','DLL01','Raggedy Ann',        '4.99');
 INSERT INTO `products` VALUES ('RYL01', 'FNG01','King doll',          '9.49');
 INSERT INTO `products` VALUES ('RYL02', 'FNG01','Queen doll',         '9.49');
-
-
-FIELDS TERMINATED BY '|'
-ENCLOSED BY ''
-LINES TERMINATED BY '|\n'
