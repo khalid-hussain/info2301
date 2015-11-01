@@ -69,6 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <li><a href="#retrieving-data">Retrieving Data</a></li>
         <li><a href="#sorting-retrieved-data">Sorting Retrieved Data</a></li>
         <li><a href="#filtering-data">Filtering Data</a></li>
+        <li><a href="#advanced-data-filtering">Advanced Data Filtering</a></li>
         </ul>
         </div>
       </div>
@@ -509,6 +510,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
 <span class="kw">FROM</span> products
 <span class="kw">WHERE</span> prod_price <span class="kw">BETWEEN</span> <span class="dv">5</span> <span class="kw">AND</span> <span class="dv">10</span>;</code></pre></div>
+<h2 id="advanced-data-filtering">Advanced Data Filtering</h2>
+<h3 id="using-the-and-operator">Using the <code>AND</code> Operator</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_id, prod_price, prod_name
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> vend_id = <span class="st">'DLL01'</span> <span class="kw">AND</span> prod_price &lt;= <span class="dv">4</span>;</code></pre></div>
+<h3 id="using-the-or-operator">Using the <code>OR</code> Operator</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECt</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> vend_id = <span class="st">'DLL01'</span> <span class="kw">OR</span> vend_id = <span class="st">'BRS01'</span>;</code></pre></div>
+<h3 id="understanding-order-of-evaluation">Understanding Order of Evaluation</h3>
+<p>Sample Query</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span>   vend_id = <span class="st">'DLL01'</span> <span class="kw">OR</span> vend_id = <span class="st">'BRS01'</span>
+        <span class="kw">AND</span> prod_price &gt;=<span class="dv">10</span>;</code></pre></div>
+<p><strong>Why:</strong> MySQL gives precedence to <code>AND</code>. It interprets the above query as &quot;Any products costing $10 or more made by vendor <code>BRS01</code> or any products made by vendor <code>DLL01</code>&quot;.</p>
+<p><strong>Solution:</strong></p>
+<p>Corrected Sample Query</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span>   (vend_id = <span class="st">'DLL01'</span> <span class="kw">OR</span> vend_id = <span class="st">'BRS01'</span>)
+        <span class="kw">AND</span> prod_price &gt;=<span class="dv">10</span>;</code></pre></div>
+<h3 id="using-the-in-operator">Using the <code>IN</code> Operator</h3>
+<p>The <code>IN</code> operator is used to specify a range of conditions, any of which can be matched. <code>IN</code> takes a comma-delimited list of valid values, all enclosed within parantheses.</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name, prod_price
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> vend_id <span class="kw">IN</span> (<span class="st">'DLL01'</span>,<span class="st">'BRS01'</span>)
+<span class="kw">ORDER</span> <span class="kw">BY</span> prod_name;</code></pre></div>
+<p><strong>Advantages</strong> * Order of evaluation is easier to manage when used in conjunction with <code>AND</code> and <code>OR</code> operators. * Cleaner and easier to read than a long list of <code>OR</code> commands. * More optimized for speed when used with long lists as compared to <code>OR</code> operators. * The <code>IN</code> operator can contain another <code>SELECT</code> statement.</p>
+<h3 id="using-the-not-operator">Using the <code>NOT</code> Operator</h3>
+<p><strong>Note:</strong> The <code>NOT</code> operator is never used by itself. It always has to be followed by an operator which it will negate.</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> prod_name
+<span class="kw">FROM</span> products
+<span class="kw">WHERE</span> <span class="kw">NOT</span> vend_id = <span class="st">'DLL01'</span>
+<span class="kw">ORDER</span> <span class="kw">BY</span> prod_name;</code></pre></div>
+<p>Although the above can be accomplished differently using the <code>&lt;&gt;</code> operator, the <code>NOT</code> operator becomes more useful when used in conjunction with other operators such as <code>IN</code>.</p>
             </div>
     </div>
   </div>
