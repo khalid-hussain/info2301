@@ -10,6 +10,7 @@ There is a "Download ZIP" button on the right side of this page. Download the pa
 If you have git installed, you can avoid always downloading the zip file by running the following commands:
 ```
 git clone https://github.com/khalid-hussain/info2301.git
+cd info2301
 git remote add upstream https://github.com/khalid-hussain/info2301.git
 git pull
 ```
