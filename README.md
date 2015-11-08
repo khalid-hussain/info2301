@@ -17,3 +17,7 @@ git pull
 
 # Issues
 If you have any issues or errors to report, you may use the "Issues" section of this GitHub repository or send a message to the Telegram group.
+
+# Credits
+- [PhpMiniAdmin](https://github.com/osalabs/phpminiadmin)
+- [Sams Teach Yourself SQL in 10 minutes](http://www.amazon.com/Minutes-Sams-Teach-Yourself-Edition/dp/0672336073)
