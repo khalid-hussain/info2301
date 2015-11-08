@@ -23,7 +23,3 @@ INSERT INTO `products` VALUES ('RYL01', 'FNG01','King doll',          '9.49');
 INSERT INTO `products` VALUES ('RYL02', 'FNG01','Queen doll',         '9.49');
 
 INSERT INTO `products` VALUES ('RYL04', 'FNG01','Queen Doll 3', null);
-
-
-select prod_name, prod_price
-from products
