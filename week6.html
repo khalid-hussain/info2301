@@ -2178,8 +2178,26 @@ p {
 <li><a href="#true-code-select-code-clause-ordering"><code>SELECT</code> Clause Ordering</a></li>
 </ul>
 </li>
-<li><a href="#trueworking-with-subqueries">Working with Subqueries</a></li>
-<li><a href="#truejoining-tables">Joining Tables</a></li>
+<li><a href="#trueworking-with-subqueries">Working with Subqueries</a>
+<ul class="sectlevel2">
+<li><a href="#truefilterting-by-subquery">Filterting by Subquery</a></li>
+<li><a href="#trueusing-subqueries-as-calculated-fields">Using subqueries as calculated fields</a></li>
+</ul>
+</li>
+<li><a href="#truejoining-tables">Joining Tables</a>
+<ul class="sectlevel2">
+<li><a href="#truesimple-join">Simple join</a></li>
+<li><a href="#truemultiple-table-join">Multiple table join</a></li>
+</ul>
+</li>
+<li><a href="#trueinserting-data">Inserting Data</a>
+<ul class="sectlevel2">
+<li><a href="#truecomplete-rows">Complete Rows</a></li>
+<li><a href="#truepartial-rows">Partial Rows</a></li>
+</ul>
+</li>
+<li><a href="#trueupdating-and-deleting-data">Updating and Deleting Data</a></li>
+<li><a href="#truecreating-tables">Creating Tables</a></li>
 </ul>
 </div>
 </div>
@@ -2610,19 +2628,173 @@ ORDER BY items, order_num;</code></pre>
 <div class="sect1">
 <h2 id="trueworking-with-subqueries"><a class="anchor" href="#trueworking-with-subqueries"></a>Working with Subqueries</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="truefilterting-by-subquery"><a class="anchor" href="#truefilterting-by-subquery"></a>Filterting by Subquery</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT order_num
+FROM orderitems
+WHERE prod_id = 'RGAN01';</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT cust_id
+FROM orders
+WHERE order_num IN (20007, 20008);</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT cust_id
+FROM orders
+WHERE order_num IN (SELECT order_num
+                    FROM orderitems
+                    WHERE prod_id = 'RGAN01');</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueusing-subqueries-as-calculated-fields"><a class="anchor" href="#trueusing-subqueries-as-calculated-fields"></a>Using subqueries as calculated fields</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT COUNT(*) AS orders
+FROM orders
+WHERE cust_id = '1000000001';</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT  cust_name,
+        cust_state,
+        (SELECT COUNT(*)
+        FROM orders
+        WHERE orders.cust_id = customers.cust_id) AS orders
+FROM customers
+ORDER BY cust_name;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="truejoining-tables"><a class="anchor" href="#truejoining-tables"></a>Joining Tables</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="truesimple-join"><a class="anchor" href="#truesimple-join"></a>Simple join</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT vend_name, prod_name, prod_price
+FROM vendors, products
+WHERE vendors.vend_id = products.vend_id;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>WHERE</code> clause is important otherwise you will get entries which are the total of the entries in the first table multipled by the entries in the table.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truemultiple-table-join"><a class="anchor" href="#truemultiple-table-join"></a>Multiple table join</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">SELECT prod_name, vend_name, prod_price, quantity
+FROM orderitems, products, vendors
+WHERE products.vend_id = vendors.vend_id
+AND orderitems.prod_id = products.prod_id
+AND order_num = 20007;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueinserting-data"><a class="anchor" href="#trueinserting-data"></a>Inserting Data</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="truecomplete-rows"><a class="anchor" href="#truecomplete-rows"></a>Complete Rows</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">INSERT INTO customers
+VALUES ('1000000006',
+        'Toy Land',
+        '123 Any Street',
+        'New York',
+        'NY',
+        '11111',
+        'USA');</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truepartial-rows"><a class="anchor" href="#truepartial-rows"></a>Partial Rows</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">INSERT INTO customers  (cust_id,
+                        cust_name,
+                        cust_address,
+                        cust_city,
+                        cust_state,
+                        cust_zip,
+                        cust_country)
+VALUES ('1000000006',
+        'Toy Land',
+        '123 Any Street',
+        'New York',
+        'NY',
+        '11111',
+        'USA');</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueupdating-and-deleting-data"><a class="anchor" href="#trueupdating-and-deleting-data"></a>Updating and Deleting Data</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">UPDATE customers
+SET cust_email = 'kim@thetoystore.com'
+WHERE cust_id = '1000000005';</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">UPDATE customers
+SET     cust_contact = 'Sam Roberts',
+        cust_email = 'sam@toyland.com'
+WHERE cust_id = '1000000006';</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql" data-lang="sql">DELETE FROM customers
+WHERE cust_id = '1000000006';</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truecreating-tables"><a class="anchor" href="#truecreating-tables"></a>Creating Tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Study the provided sample scripts.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-11-05 11:44:07 MPST
+Last updated 2015-11-09 02:43:14 MPST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
