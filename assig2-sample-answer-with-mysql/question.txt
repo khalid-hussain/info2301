@@ -1,0 +1,3 @@
+By default the menu section consists of a text field, a password input and a submit button while the stage section should display the welcoming remark to visitors.
+
+2. the menu section is required to serve as the gateway into your group member’s personal page that uses email address as username and student id as the password. Once the correct inputs of username and password were given the submit button will open the respective member’s personal page from assignment 1 on the stage section. Caution!  each member’s personal page is accessible when the correct username and password are provided and the process must only via this menu section and to be displayed onto the stage section, no where else.
