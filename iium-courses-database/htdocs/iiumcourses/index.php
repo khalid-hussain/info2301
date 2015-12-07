@@ -26,6 +26,8 @@ or trigger_error("Query Failed! SQL: $theQuery - Error: ". mysqli_error($conn), 
   <?php
   // If $result has values, display table of students
   if($result) {
+    // Check if we have more than zero students, otherwise display a notice.
+    if (mysqli_num_rows($result) > 0){
       ?>
       <table border="1" cellpadding="10" cellspacing="0">
         <thead>
@@ -44,17 +46,18 @@ or trigger_error("Query Failed! SQL: $theQuery - Error: ". mysqli_error($conn), 
             <td><?php echo $row['stud_id']; ?></td>
             <td><?php echo $row['stud_name'];?></td>
             <td><?php echo $row['stud_kulliyah'];?></td>
-            <td><?php echo $row['stud_country'];?></td>            
+            <td><?php echo $row['stud_country'];?></td>
           </tr>
           <?php
         }?>
         </tbody>
         </table>
       <?php
-  } // If there are no students, jump to 'else' block.
-  else {
-    echo "There are no student details to display.";
-  }
+    } // If there are no students, jump to 'else' block.
+    else {
+      echo "There are no student details to display.";
+    }
+  } // End of if($result){} block.
   ?>
 </body>
 </html>
